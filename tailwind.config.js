@@ -6,6 +6,9 @@ module.exports = {
         xsm: '.8rem',
         xs: '.7rem',
       },
+      width: {
+        '95-p': '95%',
+      },
     },
   },
   plugins: [],

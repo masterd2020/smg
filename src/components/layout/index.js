@@ -7,14 +7,15 @@ import HomeIcon from '@mui/icons-material/Home';
 import TabList from '../reusable/TabList';
 import logo from '../../image/user.png';
 import tabs from '../../data/tabs';
+import {color} from '../../constants';
 
 const DashboardLayout = ({ children }) => {
   const [currentTab, setCurrentTab] = useState(null)
 
   return (
-    <div className="lg:relative lg:bg-gray-100 lg:h-screen lg:flex">
+    <div className="lg:relative lg:bg-gray-100 lg:h-full lg:flex">
       {/** Sidebar */}
-      <div className='lg:relative lg:w-1/5 lg:text-xsm lg:p-4 lg:overflow-hidden bg-gradient-to-b from-indigo-300 to-indigo-700'>
+      <div className={'lg:relative lg:w-1/5 lg:text-xsm lg:p-4 lg:overflow-hidden lg:bg-gradient-to-b'.concat(' ').concat(color)}>
         <div className='lg:flex lg:items-center lg:gap-3'>
           <div>
             <img src={logo} width='50' height='50' alt='logo' />
@@ -67,7 +68,7 @@ const DashboardLayout = ({ children }) => {
         </div>
         
         {/** Main Content */}
-        <div className="lg:w-11/12 lg:flex lg:overflow-hidden lg:mx-auto lg:relative lg:mt-12 border">{children}</div>
+        <div className="lg:w-95-p lg:flex lg:flex-col lg:overflow-hidden lg:mx-auto lg:relative lg:mt-8 lg:p-8">{children}</div>
       </div>
 
     </div>

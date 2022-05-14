@@ -4,7 +4,7 @@ import {
 
 
 const tabStyle =  `lg:h-8 lg:text-white lg:pl-2 lg:flex lg:items-center lg:cursor-pointer`
-const currentTabStyle = tabStyle.concat(' ').concat('lg:bg-gray-100 lg:text-white ')
+const currentTabStyle = tabStyle.concat(' ').concat('lg:bg-gray-300 lg:text-white lg:opacity-50')
 
 const TabList = ({tab, toggleTab, currentTab, i}) => {
   const {name} = tab;
