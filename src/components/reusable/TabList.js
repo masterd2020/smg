@@ -7,13 +7,15 @@ const tabStyle =  `lg:h-8 lg:text-white lg:pl-2 lg:flex lg:items-center lg:curso
 const currentTabStyle = tabStyle.concat(' ').concat('lg:bg-gray-300 lg:text-white lg:opacity-50')
 
 const TabList = ({tab, toggleTab, currentTab, i}) => {
-  const {name} = tab;
+  const {name, link} = tab;
 
   return (
     <div className='lg:mb-2' key={name}>
-      <div className={currentTab === i ?  currentTabStyle : tabStyle} onClick={() => toggleTab(i)}> 
-      {name}
-      </div>
+      <Link to={link}>
+        <div className={currentTab === i ?  currentTabStyle : tabStyle} onClick={() => toggleTab(i)}> 
+        {name}
+        </div>
+      </Link>
 
       {currentTab === i ? (
         tab.sub && tab.sub.length > 0 ? (

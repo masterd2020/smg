@@ -9,7 +9,7 @@ import logo from '../../image/user.png';
 import tabs from '../../data/tabs';
 import {color} from '../../constants';
 
-const DashboardLayout = ({ children }) => {
+const DashboardLayout = ({ children, header }) => {
   const [currentTab, setCurrentTab] = useState(null)
 
   return (
@@ -58,7 +58,7 @@ const DashboardLayout = ({ children }) => {
       <div className='lg:w-full'>
         {/** Header */}
         <div className='lg:h-16 lg:w-full lg:bg-white lg:px-6 lg:z-40 lg:flex lg:items-center lg:justify-between'>
-          <p className='lg:font-bold'>Dashboard</p>
+          <p className='lg:font-bold'>{header}</p>
           <div className="lg:flex lg:gap-4 lg:items-center">
             <NotificationsNoneRoundedIcon />
             <div>

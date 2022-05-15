@@ -16,7 +16,7 @@ const Dashboard = () => {
   const [currentTab, setCurrentTab] = useState('Recent Users');
 
   return (
-    <DashboardLayout>
+    <DashboardLayout header='Dashboard'>
       <div className={"lg:absolute lg:text-gradient-to-b lg:right-2".concat(' ').concat(color)}>
         <MoreHorizIcon />
       </div>
