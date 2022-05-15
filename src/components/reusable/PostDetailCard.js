@@ -6,7 +6,7 @@ import image from '../../image/user.png';
 
 
 const UserDetailCard = () => {
-  const [userId, setUserId] = useState('h')
+  const [userId] = useState('h')
 
   return (
     <div className='lg:bg-white lg:rounded-md lg:shadow-md lg:p-6 lg:w-2/6 lg:flex lg:flex-col'>
