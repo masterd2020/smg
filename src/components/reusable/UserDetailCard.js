@@ -88,7 +88,7 @@ const UserDetail = () => {
           <p>20</p>
         </div>
       </div>
-      <div className='lg:rounded-md lg:bg-red-500 lg:text-white lg:flex lg:align-center lg:justify-center lg:p-2'>Delete</div>
+      <div className='lg:rounded-md lg:bg-red-500 lg:text-white lg:flex lg:align-center lg:justify-center lg:p-2 lg:cursor-pointer'>Delete</div>
     </>
   )
 }
