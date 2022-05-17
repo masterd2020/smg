@@ -9,6 +9,7 @@ import RecentPostsTab from '../../components/reusable/RecentPostsTab';
 import Tags from '../../components/reusable/Tags'
 import OverviewCards from '../../components/reusable/OverviewCards'
 import ShowTabHeader from '../../components/reusable/ShowTabHeader'
+import SearchPostHeader from '../../components/reusable/SearchPostHeader'
 
 
 
@@ -16,7 +17,7 @@ const SearchPosts = () => {
   const [currentTab, setCurrentTab] = useState('Recent Users');
 
   return (
-    <DashboardLayout header='Dashbaord > Search'>
+    <DashboardLayout header='Dashbaord > Search' SearchPostHeader={<SearchPostHeader />}>
       <div className={"lg:absolute lg:text-gradient-to-b lg:right-2".concat(' ').concat(color)}>
         <MoreHorizIcon />
       </div>
@@ -40,5 +41,6 @@ const SearchPosts = () => {
     </DashboardLayout>
   );
 }
+
 
 export default SearchPosts;

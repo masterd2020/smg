@@ -9,7 +9,7 @@ import logo from '../../image/user.png';
 import tabs from '../../data/tabs';
 import {color} from '../../constants';
 
-const DashboardLayout = ({ children, header }) => {
+const DashboardLayout = ({ children, header, SearchPostHeader }) => {
   const [currentTab, setCurrentTab] = useState(null)
 
   return (
@@ -66,9 +66,10 @@ const DashboardLayout = ({ children, header }) => {
             </div>
           </div>
         </div>
+        {SearchPostHeader}
         
         {/** Main Content */}
-        <div className="lg:w-95-p lg:flex lg:flex-col lg:overflow-hidden lg:mx-auto lg:relative lg:mt-8 lg:p-8">{children}</div>
+        <div className="lg:w-95-p lg:flex lg:flex-col lg:overflow-hidden lg:mx-auto lg:relative lg:mt-8 lg:p-8 border border-red-500">{children}</div>
       </div>
 
     </div>
