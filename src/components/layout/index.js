@@ -69,7 +69,7 @@ const DashboardLayout = ({ children, header, SearchPostHeader }) => {
         {SearchPostHeader}
         
         {/** Main Content */}
-        <div className="lg:w-95-p lg:flex lg:flex-col lg:overflow-hidden lg:mx-auto lg:relative lg:mt-8 lg:p-8 border border-red-500">{children}</div>
+        <div className="lg:w-95-p lg:flex lg:flex-col lg:overflow-hidden lg:mx-auto lg:relative lg:mt-8 lg:p-8">{children}</div>
       </div>
 
     </div>
