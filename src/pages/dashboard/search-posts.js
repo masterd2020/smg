@@ -1,14 +1,5 @@
-import {useState} from 'react'
 import DashboardLayout from '../../components/layout/index';
 
-import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import {color} from '../../constants';
-
-import RecentUsersTab from '../../components/reusable/RecentUsersTab';
-import RecentPostsTab from '../../components/reusable/RecentPostsTab';
-import Tags from '../../components/reusable/Tags'
-import OverviewCards from '../../components/reusable/OverviewCards'
-import ShowTabHeader from '../../components/reusable/ShowTabHeader'
 import SearchPostHeader from '../../components/reusable/SearchPostHeader'
 import Boxs from '../../components/reusable/Boxs'
 import SearchPostActionIcons from '../../components/reusable/SearchPostActionIcons'
