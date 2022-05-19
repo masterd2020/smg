@@ -1,4 +1,5 @@
 import { toast } from 'react-toastify';
+import { SyncOutlined } from '@ant-design/icons';
 import {useGetUsersQuery} from '../../features/user/userSlice'
 
 import Checkbox from '@mui/material/Checkbox';
@@ -14,7 +15,7 @@ const RecentUsersTab = () => {
 
   const notify = () => toast("Wow so easy!");
   notify()
-  
+
   return (
     <div className='lg:flex lg:gap-4 lg:mt-4'>
       {/** Left content */}
@@ -24,6 +25,7 @@ const RecentUsersTab = () => {
 
         {/** Header tab content */}
         <div className="lg:h-96 lg:overflow-y-scroll">
+          {/* <SyncOutlined spin className="lg:text-2xl lg:text-indigo-300" /> */}
           <SingleUserCard />
           <SingleUserCard />
           <SingleUserCard />
