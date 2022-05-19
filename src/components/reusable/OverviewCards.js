@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { increment } from '../../features/counter/counter-slice'
+import { increment, incrementByAmount } from '../../features/counter/counter-slice'
 
 import {color} from '../../constants';
 
@@ -20,7 +20,7 @@ const OverviewCard = ({overviewName, number, active}) => {
   const defaultStyle = 'lg:shadow-md lg:bg-white lg:px-4 lg:py-6 lg:rounded-lg lg:bg-gradient-to-b'
 
   return (
-    <div className={active ? defaultStyle.concat(' lg:text-white ').concat(color) : defaultStyle} onClick={() => dispatch(increment())}>
+    <div className={active ? defaultStyle.concat(' lg:text-white ').concat(color) : defaultStyle} onClick={() => dispatch(incrementByAmount(5))}>
       <p className='lg:text-xs'>{overviewName}</p>
       {/* <p className='lg:text-lg lg:font-bold'>{number}</p> */}
       <p className='lg:text-lg lg:font-bold'>{count}</p>
