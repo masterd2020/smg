@@ -16,7 +16,7 @@ const root = createRoot(container); // createRoot(container!) if you use TypeScr
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <ToastContainer autoClose={1500} />
+      <ToastContainer autoClose={5000} />
       <App />
     </Provider>
   </React.StrictMode>

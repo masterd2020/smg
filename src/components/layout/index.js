@@ -44,7 +44,7 @@ const DashboardLayout = ({ children, header, SearchPostHeader }) => {
                 };
 
                 return (
-                  <TabList tab={tab} toggleTab={toggleTab} currentTab={currentTab} i={i} />
+                  <TabList tab={tab} toggleTab={toggleTab} currentTab={currentTab} i={i} key={tab} />
                 )
               })
             }
