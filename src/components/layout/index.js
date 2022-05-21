@@ -13,7 +13,7 @@ const DashboardLayout = ({ children, header, SearchPostHeader }) => {
   const [currentTab, setCurrentTab] = useState(null)
 
   return (
-    <div className="lg:relative lg:bg-gray-100 lg:h-full lg:flex">
+    <div className="lg:relative lg:bg-gray-100 lg:h-screen lg:flex">
       {/** Sidebar */}
       <div className={'lg:relative lg:w-1/5 lg:text-xsm lg:p-4 lg:overflow-hidden lg:bg-gradient-to-b'.concat(' ').concat(color)}>
         <div className='lg:flex lg:items-center lg:gap-3'>
@@ -55,7 +55,7 @@ const DashboardLayout = ({ children, header, SearchPostHeader }) => {
       </div>
       </div>
 
-      <div className='lg:w-full'>
+      <div className='lg:w-full lg:overflow-y-scroll'>
         {/** Header */}
         <div className='lg:h-16 lg:w-full lg:bg-white lg:px-6 lg:z-40 lg:flex lg:items-center lg:justify-between'>
           <p className='lg:font-bold'>{header}</p>

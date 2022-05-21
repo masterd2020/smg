@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import {APP_ID} from '../../constants'
 
-export const userApiSilce = createApi({
+export const postApiSilce = createApi({
   reducterPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://dummyapi.io/data/v1',
@@ -13,18 +13,18 @@ export const userApiSilce = createApi({
   }),
   endpoints: (builder) => {
     return {
-      getUsers: builder.query({
+      getPosts: builder.query({
         query(limit = 10) {
-          return `/user?limit=${limit}`;
+          return `/post?limit=${limit}`;
         }
       }),
-      getUserById: builder.query({
+      getPostById: builder.query({
         query(id) {
-          return `/user/${id}`;
+          return `/post/${id}`;
         }
       })
     }
   }
 })
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = userApiSilce
+export const { useGePostsQuery, useGetPostByIdQuery } = postApiSilce

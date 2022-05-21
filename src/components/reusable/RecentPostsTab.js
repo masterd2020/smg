@@ -1,5 +1,3 @@
-import { toast } from 'react-toastify';
-
 import Checkbox from '@mui/material/Checkbox';
 import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -8,8 +6,6 @@ import image from '../../image/user.png';
 import PostDetailCard from './PostDetailCard'
 
 const RecentPostsTab = () => {
-  const notify = () => toast("Wow so easy!");
-  notify()
   return (
     <div className='lg:flex lg:gap-4 lg:mt-4'>
       {/** Left content */}
@@ -19,7 +15,7 @@ const RecentPostsTab = () => {
 
 
         {/** Header tab content */}
-        <div className="lg:h-96 lg:overflow-y-scroll">
+        <div className="lg:h-100 lg:overflow-y-scroll">
           <SinglePostCard />
           <SinglePostCard />
           <SinglePostCard />
