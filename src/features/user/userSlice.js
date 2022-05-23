@@ -22,6 +22,14 @@ export const userApiSlice = createApi({
           }
         }
       }),
+      deleteUserById: builder.mutation({
+        query({id}) {
+          return {
+            url: `/user/${id}`,
+            method: 'DELETE'
+          }
+        }
+      }),
       getUsers: builder.query({
         query(limit = 10) {
           return `/user?limit=${limit}`;
@@ -31,9 +39,9 @@ export const userApiSlice = createApi({
         query(id) {
           return `/user/${id}`;
         }
-      })
+      }),
     }
   }
 })
 
-export const { useCreateUserMutation, useGetUsersQuery, useGetUserByIdQuery } = userApiSlice
+export const { useCreateUserMutation, useDeleteUserByIdMutation, useGetUsersQuery, useGetUserByIdQuery } = userApiSlice

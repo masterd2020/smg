@@ -1,4 +1,4 @@
-import {useGetUserByIdQuery} from '../../features/user/userSlice'
+import {useGetUserByIdQuery, useDeleteUserByIdMutation} from '../../features/user/userSlice'
 
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
@@ -8,7 +8,7 @@ import image from '../../image/user.png';
 
 const UserDetailCard = ({currentUserId}) => {
   let {data, isFetching} = useGetUserByIdQuery(currentUserId)
-
+  
   if(!currentUserId.length > 0) {
     return (
       <div className='lg:bg-white lg:rounded-md lg:shadow-md lg:p-6 lg:w-2/6 lg:flex lg:flex-col'>
@@ -19,6 +19,7 @@ const UserDetailCard = ({currentUserId}) => {
     </div>
     )
   }
+
 
   return (
     <div className='lg:bg-white lg:rounded-md lg:shadow-md lg:p-6 lg:w-2/6 lg:flex lg:flex-col'>      
@@ -33,7 +34,13 @@ const UserDetailCard = ({currentUserId}) => {
 }
 
 const UserDetail = ({data}) => {
-  const {firstName, lastName, email, phone, picture, gender, dateOfBirth, registerDate, updatedDate, location} = data
+  const [deleteUserById, {isLoading}] = useDeleteUserByIdMutation()
+  const {id, firstName, lastName, email, phone, picture, gender, dateOfBirth, registerDate, updatedDate, location} = data
+ 
+  const handleDeleteUser = async (id) => {
+    const response = await deleteUserById({id})
+    if(response.data.id.length > 0) return window.location.reload(false);
+  }
 
   return (
     <>
@@ -106,7 +113,7 @@ const UserDetail = ({data}) => {
           <p>20</p>
         </div>
       </div>
-      <div className='lg:rounded-md lg:bg-red-500 lg:text-white lg:flex lg:align-center lg:justify-center lg:p-2 lg:cursor-pointer'>Delete</div>
+      <div className='lg:rounded-md lg:bg-red-500 lg:text-white lg:flex lg:align-center lg:justify-center lg:p-2 lg:cursor-pointer' onClick={() => handleDeleteUser(id)}>{isLoading ? <Loading size='xl' /> : 'Delete'}</div>
     </>
   )
 }
