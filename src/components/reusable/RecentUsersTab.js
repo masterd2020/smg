@@ -9,8 +9,8 @@ import image from '../../image/user.png';
 import UserDetailCard from './UserDetailCard'
 import Loading from './Loading'
 
-
 import handleError from '../../lib/handleError'
+
 const RecentUsersTab = () => {
   const [currentUserId, setCurrentUserId] = useState('')
   let {data, isLoading, isError, error} = useGetUsersQuery()
