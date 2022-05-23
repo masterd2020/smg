@@ -2,8 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 import {APP_ID} from '../../constants'
 
-export const commentApiSlice = createApi({
-  reducterPath: 'commentAPI',
+export const tagApiSlice = createApi({
+  reducterPath: 'tagAPI',
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://dummyapi.io/data/v1',
     prepareHeaders(headers) {
@@ -13,18 +13,18 @@ export const commentApiSlice = createApi({
   }),
   endpoints: (builder) => {
     return {
-      getComments: builder.query({
+      getTags: builder.query({
         query(limit = 10) {
-          return `/comment?limit=${limit}`;
+          return `/tag?limit=${limit}`;
         }
       }),
-      getCommentById: builder.query({
+      getTagById: builder.query({
         query(id) {
-          return `/comment/${id}`;
+          return `/tag/${id}`;
         }
       })
     }
   }
 })
 
-export const { useGetCommentsQuery, useGetCommentByIdQuery } = commentApiSlice
+export const { useGetTagsQuery, useGetTagByIdQuery } = tagApiSlice

@@ -1,13 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from '../features/counter/counter-slice'
-import {userApiSilce} from '../features/user/userSlice'
+import {userApiSlice} from '../features/user/userSlice'
+import {postApiSlice} from '../features/post/postSlice'
+import {commentApiSlice} from '../features/comment/commentSlice'
+import {tagApiSlice} from '../features/tag/tagSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    [userApiSilce.reducerPath]: userApiSilce.reducer
+    [userApiSlice.reducerPath]: userApiSlice.reducer,
+    [postApiSlice.reducerPath]: postApiSlice.reducer,
+    [commentApiSlice.reducerPath]: commentApiSlice.reducer,
+    [tagApiSlice.reducerPath]: tagApiSlice.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(userApiSilce.middleware)
+    return getDefaultMiddleware().concat(userApiSlice.middleware).concat(postApiSlice.middleware).concat(commentApiSlice.middleware).concat(tagApiSlice.middleware)
   }
 })
