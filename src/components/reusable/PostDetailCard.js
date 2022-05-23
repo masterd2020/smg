@@ -33,7 +33,7 @@ const PostDetailCard = ({currentPostId}) => {
 }
 
 const PostDetail = ({data}) => {
-  const {id,  image, likes, tags, owner: {firstName, lastName, picture}, text} = data;
+  const {image, likes, tags, owner: {firstName, lastName, picture}, text} = data;
 
   return (
     <>
