@@ -1,13 +1,20 @@
 import {color} from '../../constants';
 
+import {useGetTagsQuery} from '../../features/tag/tagSlice'
+
+import Loading from './Loading'
+
+
 const Tags = () => {
+  let tagData = useGetTagsQuery();
+
   return (
     <div className='lg:w-4/5 lg:mt-5 lg:grid lg:gap-4 lg:grid-cols-2'>
-      <Tag tag='Dog' number='345' active={true} />
-      <Tag tag='Water' number='345' />
-      <Tag tag='Nature' number='345' />
-      <Tag tag='Private info request' number='345' />
-      <Tag tag='Winter' number='345' />
+      {tagData.isFetching ? <Loading size='xl' /> : tagData.data?.data.slice(0,6).map((tag, index) => {
+        return (
+          <Tag key={index} tag={tag} number={index} active={index === 0} />
+        )
+      })}
     </div>
   )
 }
