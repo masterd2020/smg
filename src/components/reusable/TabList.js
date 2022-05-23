@@ -31,10 +31,10 @@ const SubTabList = ({tab}) => {
     <div className='lg:text-xsm lg:w-26 lg:ml-2 lg:mt-2 lg:text-white lg:mb-1'>
         {tab.sub.map((subTab) => {
           const {name} = subTab;
-          
+
           return(
-            <Link to={subTab.link}>
-              <p className='cursor-pointer mb-1' key={name}>{name}</p>
+            <Link to={subTab.link} key={`${name}`}>
+              <p className='cursor-pointer mb-1'>{name}</p>
             </Link>
           )
         })}
