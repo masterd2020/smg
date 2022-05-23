@@ -13,6 +13,15 @@ export const userApiSlice = createApi({
   }),
   endpoints: (builder) => {
     return {
+      createUser: builder.mutation({
+        query(body) {
+          return {
+            url: '/user/create',
+            method: 'POST',
+            body
+          }
+        }
+      }),
       getUsers: builder.query({
         query(limit = 10) {
           return `/user?limit=${limit}`;
@@ -27,4 +36,4 @@ export const userApiSlice = createApi({
   }
 })
 
-export const { useGetUsersQuery, useGetUserByIdQuery } = userApiSlice
+export const { useCreateUserMutation, useGetUsersQuery, useGetUserByIdQuery } = userApiSlice

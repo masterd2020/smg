@@ -89,7 +89,7 @@ const SingleUserCard = ({user, setCurrentUserId}) => {
           <Checkbox size='small' />
           <p>{id.slice(0, 5)}</p>
         </div>
-        <p className='lg:w-1/4'>{title}</p>
+        <p className='lg:w-1/4'>{title || 'ms'}</p>
         <div className='lg:w-4/5 lg:flex lg:items-center lg:gap-2 lg:text-xs'>
           <div className='lg:w-10 lg:h-10 lg:rounded-full lg:overflow-hidden'>
             <img src={picture || image} alt='user pic' />

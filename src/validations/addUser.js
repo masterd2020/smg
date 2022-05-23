@@ -10,6 +10,7 @@ const validate = Yup.object({
   email: Yup.string()
     .email('Email is invalid')
     .required('Email is required'),
+  phone: Yup.number()
 })
 
 export default validate;
