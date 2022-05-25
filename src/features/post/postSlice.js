@@ -23,6 +23,11 @@ export const postApiSlice = createApi({
           return `/post/${id}`;
         }
       }),
+      getPaginatedPosts: builder.query({
+        query({limit = 10, page = 1}) {
+          return `/post?limit=${limit}&page=${page}`;
+        }
+      }),
       getPostByUser: builder.query({
         query(id) {
           return `/user/${id}/post`;
@@ -32,4 +37,4 @@ export const postApiSlice = createApi({
   }
 })
 
-export const { useGetPostsQuery, useGetPostByIdQuery, useGetPostByUserQuery } = postApiSlice
+export const { useGetPostsQuery, useGetPaginatedPostsQuery, useGetPostByIdQuery, useGetPostByUserQuery } = postApiSlice

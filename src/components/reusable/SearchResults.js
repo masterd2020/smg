@@ -9,8 +9,13 @@ import Loading from './Loading'
 import defaultImage from '../../image/user.png';
 import handleError from '../../lib/handleError'
 
-const SearchPostResult = () => {
+const SearchPostResult = ({paginatedPostsData, paginatedPostsIsFetching}) => {
   let {data, isFetching, isError, error} = useGetPostsQuery()
+
+  const mutateIsFetching = () => {
+    isFetching = paginatedPostsIsFetching
+  }
+  paginatedPostsIsFetching && mutateIsFetching()
 
   handleError(isError, error);
 
@@ -24,7 +29,7 @@ const SearchPostResult = () => {
         {/** Header tab content */}
         <div className="lg:h-100 lg:overflow-y-scroll">
           {
-            isFetching ? <Loading size='2xl'/> : <PostList  data={data}/>
+            isFetching ? <Loading size='2xl'/> : <PostList  data={paginatedPostsData.length > 0 ? paginatedPostsData : data?.data}/>
           }
         </div>
       </div>
@@ -66,7 +71,7 @@ const PostList = ({data, setCurrentPostId}) => {
   return (
     <>
       {
-        data?.data.map((post) => <SinglePostCard key={post.id} post={post} setCurrentPostId={setCurrentPostId}/>)
+        data.map((post) => <SinglePostCard key={post.id} post={post} setCurrentPostId={setCurrentPostId}/>)
       }
     </>
   )
