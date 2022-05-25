@@ -8,7 +8,7 @@ The following are the framework and library used.
 
 ## Local setup
 
-Start by cloning the repository, by running the command `git clone ` in your command line interface.
+Start by cloning the repository, by running the command `git clone https://github.com/masterd2020/smg.git` in your command line interface.
 
 Navigate into the folder and type `npm install` to install all the dependencies
 
